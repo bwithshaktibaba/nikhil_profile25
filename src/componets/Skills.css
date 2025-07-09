@@ -1,0 +1,137 @@
+.skills-section {
+  background-color: #1a202c;
+  color: #d1d5db;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto; /* ✅ FIXED */
+  overflow: visible; /* ✅ FIXED */
+}
+
+.skills-text {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ✅ LEAVE AS IS - Upcoming Skills section */
+.upcoming-skills-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.upcoming-skill-image-placeholder {
+  flex: 1;
+  max-width: 22%;
+  height: 150px;
+  background-color: #4a5568;
+  border-radius: 5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upcoming-skill-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ FIXED invalid value */
+  border-radius: 1rem;
+}
+
+/* ✅ Data Skills fixed */
+.data-skills-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.data-skills-images-placeholder {
+  flex: 1 1 200px;
+  max-width: 250px;
+  aspect-ratio: 4 / 3;
+  background-color: #4a5568;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-skills-images-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+/* Skills marquee */
+.skills-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.skills-marquee-content {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #1a202c;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  min-width: 150px;
+  justify-content: center;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 640px) {
+  .skills-section {
+    padding: 1rem;
+  }
+
+  .upcoming-skill-image-placeholder {
+    max-width: 45%;
+    height: 100px;
+  }
+
+  .data-skills-images-placeholder {
+    max-width: 45%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+
+  .skill-item {
+    font-size: 1.2rem;
+    min-width: 120px;
+  }
+}

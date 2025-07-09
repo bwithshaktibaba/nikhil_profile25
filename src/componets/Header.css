@@ -1,0 +1,48 @@
+.header {
+  background-color: #1a202c; /* Matches About section */
+  color: #d1d5db; /* Tailwind gray-300 for text contrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100vw;
+  /* border-bottom removed */
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Style for React Router Links */
+.nav-link {
+  text-decoration: none;
+  color: #d1d5db; /* light gray text */
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #63b3ed; /* Tailwind blue-400 on hover */
+}
+
+/* Profile image container */
+.profile-image-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Profile image */
+.profile-image-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* border removed */
+}
