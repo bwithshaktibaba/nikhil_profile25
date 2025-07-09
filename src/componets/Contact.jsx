@@ -14,7 +14,6 @@ function Contact() {
         <p><FaEnvelope /> Email: <a href="nt001230007@gmail.com">nt001230007@gmail.com</a></p>
         <p><FaWhatsapp /> WhatsApp: <a href="https://wa.me/yourwhatsappphonenumber" target="_blank" rel="noopener noreferrer">9555122144</a></p>
       </div>
-      <Footer />
     </>
   )
 }
