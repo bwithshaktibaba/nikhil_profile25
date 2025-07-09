@@ -21,16 +21,16 @@ const skills = [
 ];
 
 const upcomingSkillImages = [
-  '/assets/spring_boot.png',
-  '/assets/react_logo.png',
-  '/assets/aws_pic.png',
+  `${import.meta.env.BASE_URL}assets/spring_boot.png`,
+  `${import.meta.env.BASE_URL}assets/react_logo.png`,
+  `${import.meta.env.BASE_URL}assets/aws_pic.png`,
 ];
 
 const dataSkillImages = [
-  '/assets/ds5.png',
-  '/assets/db2.png',
-  '/assets/ds6.jpeg',
-  '/assets/ds7.png',
+  `${import.meta.env.BASE_URL}assets/ds5.png`,
+  `${import.meta.env.BASE_URL}assets/db2.png`,
+  `${import.meta.env.BASE_URL}assets/ds6.jpeg`,
+  `${import.meta.env.BASE_URL}assets/ds7.png`,
 ];
 
 function ImageSlots({ images, className, altPrefix }) {
@@ -38,7 +38,12 @@ function ImageSlots({ images, className, altPrefix }) {
     <div className={className}>
       {images.map((src, index) => (
         <div key={index} className={`${className}-placeholder`}>
-          <img src={src} alt={`${altPrefix} ${index + 1}`} />
+          <img
+            src={src}
+            alt={`${altPrefix} ${index + 1}`}
+            loading="lazy"
+            className="skill-image"
+          />
         </div>
       ))}
     </div>
@@ -47,9 +52,10 @@ function ImageSlots({ images, className, altPrefix }) {
 
 function Skills() {
   return (
-    <div className="skills-section">
+    <section className="skills-section">
       <div className="skills-text">
         <h2>My Skills</h2>
+
         <ImageSlots
           images={upcomingSkillImages}
           className="upcoming-skills-images"
@@ -63,7 +69,6 @@ function Skills() {
                 {skill.icon} {skill.name}
               </div>
             ))}
-            {/* Duplicate for seamless marquee loop */}
             {skills.map((skill, index) => (
               <div key={'duplicate-' + index} className="skill-item">
                 {skill.icon} {skill.name}
@@ -73,13 +78,14 @@ function Skills() {
         </div>
 
         <h2>Data Skills</h2>
+
         <ImageSlots
           images={dataSkillImages}
           className="data-skills-images"
           altPrefix="Data skill"
         />
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,41 +1,46 @@
-import React, { useState, useEffect } from 'react'
-import './About.css'
+import React, { useState, useEffect } from 'react';
+import './About.css';
 
-const images = [
-  '/assets/cartoon_profile.avif',
-  '/assets/profileeee1.jpg',
-  '/assets/profille333.jpg'
-]
+const imagePaths = [
+  `${import.meta.env.BASE_URL}assets/cartoon_profile.avif`,
+  `${import.meta.env.BASE_URL}assets/profileeee1.jpg`,
+  `${import.meta.env.BASE_URL}assets/profille333.jpg`,
+];
 
 function About() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % imagePaths.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="about-section">
+    <section className="about-section">
       <div className="about-text">
-        <h1>Hi I am Nikhil Tripathi</h1>
+        <h1>Hi, I’m Nikhil Tripathi</h1>
         <p>
-          Hi, I'm Nikhil — a full-stack developer with a passion for building scalable, cloud-native applications and extracting value from data in real-time environments. I specialize in crafting responsive web interfaces using React and Tailwind CSS, backed by robust Java + Spring Boot APIs orchestrated with Docker and Kubernetes.
+          I’m a full-stack developer passionate about building scalable, cloud-native applications and unlocking real-time data value. On the frontend, I craft modern interfaces using React and Tailwind CSS. On the backend, I work with Java + Spring Boot APIs, containerized with Docker and orchestrated via Kubernetes.
 
-My experience spans across integrating Kafka-powered event-driven architectures, deploying solutions on Oracle Cloud and AWS, and optimizing delivery pipelines with CI/CD workflows. On the data engineering side, I bring hands-on knowledge of Python, Hadoop, and Apache Spark to design and process data at scale — blending backend power with analytical precision.
+          My experience includes deploying on Oracle Cloud and AWS, automating pipelines with GitHub Actions and Jenkins, and implementing Kafka-driven event architectures. I also work with Python, Hadoop, and Apache Spark for distributed data engineering—bridging backend power and analytical insight.
 
-Whether I'm building a live chat system with Kafka or designing an object detection pipeline with YOLOv8, I’m always driven by clean design, performance, and impact. My goal is to merge aesthetics with systems that work beautifully behind the scenes.
+          Whether it's real-time chat systems or intelligent object tracking with YOLOv8, I build with intention, polish, and performance.
 
-Let’s connect and build something transformative.
+          Let’s connect and create something transformative.
         </p>
       </div>
+
       <div className="about-image-placeholder">
-        <img src={images[currentIndex]} alt="About slideshow" className="about-slide-image" />
+        <img
+          src={imagePaths[currentIndex]}
+          alt={`Profile image ${currentIndex + 1}`}
+          className="about-slide-image"
+        />
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default About
+export default About;
