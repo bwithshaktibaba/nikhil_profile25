@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
-  const navigate = useNavigate();
-
   return (
     <header className="header">
       <nav className="nav-links" aria-label="Main navigation">
@@ -14,9 +12,13 @@ function Header() {
         <Link to="/contact" className="nav-link">Contact</Link>
       </nav>
 
-      <div className="profile-image-container" onClick={() => navigate('/')}>
-        <img src="/assets/cartoon_profile.avif" alt="Profile" className="profile-image" />
-      </div>
+      <Link to="/" className="profile-image-container" aria-label="Home">
+        <img
+          src={`${import.meta.env.BASE_URL}assets/cartoon_profile.avif`}
+          alt="Profile"
+          className="profile-image"
+        />
+      </Link>
     </header>
   );
 }
