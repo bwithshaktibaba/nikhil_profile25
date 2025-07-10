@@ -5,7 +5,7 @@ const projectsData = [
   {
     id: 1,
     name: 'Vacant Chair Detection',
-    url: 'https://example.com/project-one',
+  
     description: 'A real-time object detection system using YOLOv8 to identify vacant chairs in a room.',
     image: `${import.meta.env.BASE_URL}assets/proji3.jpg`,
     video: `${import.meta.env.BASE_URL}assets/proji32.mp4`,
@@ -15,7 +15,9 @@ const projectsData = [
     name: 'React Native App',
     url: 'https://example.com/project-two',
     description: 'A mobile app developed using React Native.',
-    image: `${import.meta.env.BASE_URL}assets/proji2.jpg`,
+    image: `${import.meta.env.BASE_URL}assets/proji2.jpg`, 
+
+    
   },
   {
     id: 3,
